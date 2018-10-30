@@ -10,12 +10,17 @@ package lendle.courses.wp.containers;
  * @author user
  */
 public class NewJPanel extends javax.swing.JPanel {
-
+    public String getEmail(){
+        String mail = (String) jTextField1.getText();
+        return mail;
+    }
     /**
      * Creates new form NewJPanel
      */
     public NewJPanel() {
         initComponents();
+        
+        
     }
 
     /**

@@ -62,7 +62,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //String mail = newJPanel1.
+        String mail = newJPanel1.getEmail();
+        System.out.println(mail);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
