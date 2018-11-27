@@ -7,12 +7,14 @@ package lendle.courses.wp.containers;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.io.File;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JProgressBar;
 import javax.swing.JWindow;
 import javax.swing.WindowConstants;
 
@@ -33,17 +35,21 @@ public class SplashScreenSample {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //init the JWindow, add component to its content pane
         JWindow window= new JWindow();
-        ImageIcon icon=new ImageIcon(new URL("https://i.ytimg.com/vi/ND6a4V-xdjI/hqdefault.jpg"));
+        File file = new File("1.gif");
+        ImageIcon icon=new ImageIcon(file.toURI().toURL());
         window.setLayout(new BorderLayout());
         Component add = window.getContentPane().add(new JLabel(icon));
         window.setSize(500,500);
         window.setLocationRelativeTo(null);
+        JProgressBar progressBar = new JProgressBar();
+        progressBar.setIndeterminate(true);
+        window.getContentPane().add(progressBar,"South");
         //////////////////////////////////////////////////////
         
         Thread t=new Thread(){
             public void run(){
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(SplashScreenSample.class.getName()).log(Level.SEVERE, null, ex);
                 }
